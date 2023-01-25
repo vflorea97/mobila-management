@@ -17,6 +17,7 @@ public class Mobila implements Comparable<Mobila>{
 
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Id
+    Long id;
 
     private String firma;
     private String numeProdus;
