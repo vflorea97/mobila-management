@@ -5,6 +5,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 import ro.mycode.mobilamanagement.Model.Mobila;
 
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 
@@ -24,4 +25,7 @@ public interface MobilaRepository extends JpaRepository<Mobila, Long> {
     Optional<List<Mobila>> getMobilaInOrder();
 
     Optional<Mobila> findByCod(String cod);
+
+    @Transactional
+    Optional<Mobila> removeMobilaByCod(String cod);
 }
